@@ -1,0 +1,634 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en" style="min-height: 100%; overflow-y: auto; scroll-behavior: smooth; opacity: 0;" data-stitch-anim-opacity="true"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Grounded Measures LLC | Civil 3D Earthwork Takeoffs &amp; Bid Checks</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "civil-navy": "#0b1d33",
+            "civil-dark": "#06111f",
+            "civil-blue": "#1d4ed8",
+            "civil-blue-subtle": "#eff6ff",
+            "civil-amber": "#d97706",
+            "civil-amber-dark": "#b45309",
+            "civil-amber-light": "#fef3c7",
+            "slate-rule": "#cbd5e1"
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+            body: ['"Manrope"', 'sans-serif']
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .blueprint-grid {
+      background-size: 28px 28px;
+      background-image: 
+        linear-gradient(to right, rgba(11, 29, 51, 0.035) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(11, 29, 51, 0.035) 1px, transparent 1px);
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 20;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body class="bg-[#f8fafc] text-slate-800 min-h-screen font-body text-sm md:text-base selection:bg-amber-100 selection:text-amber-900 blueprint-grid antialiased" style="min-height: 100vh; overflow-y: auto;">
+<!-- UTILITY SUB-BAR -->
+<div class="bg-civil-navy text-slate-300 text-xs py-1.5 border-b border-slate-800 px-6 lg:px-8">
+<div class="max-w-[1280px] mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 font-mono text-[11px]">
+<div class="flex items-center gap-4">
+<span class="inline-flex items-center gap-1.5 text-slate-300">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+        Estimator Desk Open: Mon–Fri 7:00 AM – 5:00 PM EST
+      </span>
+<span class="hidden md:inline text-slate-500">|</span>
+<span class="hidden md:inline text-slate-400">Civil 3D 2024 • Carlson • AGTEK Compatible</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-slate-400">Direct Estimator Line:</span>
+<a class="text-amber-400 hover:text-amber-300 font-semibold tracking-wide transition-colors" href="tel:7242217521">
+        (724) 221-7521
+      </a>
+<span class="text-slate-500">|</span>
+<a class="text-slate-300 hover:text-white transition-colors" href="mailto:bids@groundedmeasures.com">
+        bids@groundedmeasures.com
+      </a>
+</div>
+</div>
+</div>
+<!-- TOP NAVIGATION BAR -->
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all">
+<div class="flex justify-between items-center w-full px-6 lg:px-8 py-3 max-w-[1280px] mx-auto">
+<!-- Brand Logo -->
+<a class="flex items-center gap-3 transition-opacity hover:opacity-90" href="#">
+<img alt="Grounded Measures LLC Logo" class="h-11 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4Gwir5zczHSjccYcHGp8wq3JBhSttVvWEShtP4ZLjKgYp3SJnkw4tUQ-XkP6vzKsyXLukzR0Ninsm5GS032u7XLoJsRz7B4kD1Pejam9EK2KrxRypVQKoE8RUiYfpQ30RbIrcnQUwk8US3xug0xuDZ6NedZJoKE1qctwW-_tXaOBfsAHEOp4kqX_lE6gnwEaRo3jyZ0CCgzFSk4Vq0Lpb6vhppYwdaKpnV-sUTjtBiTwD_IkCPzvq5wC1QpxAO4fslyQ">
+</a>
+<!-- Navigation Links -->
+<nav class="hidden lg:flex items-center gap-7 text-xs font-mono font-semibold uppercase tracking-wider text-slate-600">
+<a class="hover:text-civil-navy hover:underline underline-offset-4 decoration-amber-500 transition-colors" href="#services">Services</a>
+<a class="hover:text-civil-navy hover:underline underline-offset-4 decoration-amber-500 transition-colors" href="#deliverables">Deliverables</a>
+<a class="hover:text-civil-navy hover:underline underline-offset-4 decoration-amber-500 transition-colors" href="#pricing">Flat Pricing</a>
+<a class="hover:text-civil-navy hover:underline underline-offset-4 decoration-amber-500 transition-colors" href="#samples">Sample Heatmap</a>
+<a class="hover:text-civil-navy hover:underline underline-offset-4 decoration-amber-500 transition-colors" href="#upload-desk">File Upload</a>
+</nav>
+<!-- Action Group -->
+<div class="flex items-center gap-3">
+<a class="hidden sm:inline-flex items-center gap-1.5 font-mono text-xs font-bold text-slate-800 bg-slate-100 hover:bg-slate-200/80 px-3 py-2 rounded-lg border border-slate-300 transition-colors" href="tel:7242217521">
+<span class="material-symbols-outlined text-[17px] text-amber-600">call</span>
+<span class="">(724) 221-7521</span>
+</a>
+<a class="inline-flex items-center gap-2 bg-civil-navy hover:bg-slate-900 text-white font-sans text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-lg border border-civil-navy shadow-sm transition-all" href="#upload-desk">
+<span class="material-symbols-outlined text-[18px] text-amber-400">upload_file</span>
+<span class="">Upload Plans for Quote</span>
+</a>
+</div>
+</div>
+</header>
+<main class="w-full">
+<!-- SECTION 1: HERO SECTION -->
+<section class="w-full max-w-[1280px] mx-auto px-6 lg:px-8 py-8 lg:py-12" id="hero"><div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center"><div class="lg:col-span-7 space-y-5"><div><div class="inline-flex items-center gap-2 px-2.5 py-1 bg-white border border-slate-300 rounded-md font-mono text-xs font-semibold text-slate-700 shadow-xs mb-3"><span class="w-2 h-2 rounded-full bg-amber-500"></span><span class="">Civil 3D Modeling • Nationwide Earthwork Takeoffs</span></div><h1 class="font-sans text-3xl sm:text-4xl lg:text-[40px] font-extrabold text-civil-navy tracking-tight leading-[1.18]">Civil 3D Earthwork Takeoffs &amp; Contractor Bid Checks</h1><p class="font-body text-slate-600 text-base sm:text-lg max-w-xl leading-relaxed mt-2.5">Fast, verified cut-and-fill volume audits for excavation contractors and site developers. Bid with complete confidence—without expensive in-house CAD overhead.</p></div><div class="space-y-3 pt-1"><div class="flex flex-wrap items-center gap-3"><a class="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-amber-600 hover:bg-amber-700 text-white font-sans text-sm font-bold rounded-lg shadow-sm transition-all" href="#upload-desk"><span class="material-symbols-outlined text-[19px]">upload_file</span><span class="">Upload Plans for Quick Quote</span></a><a class="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-white hover:bg-slate-100 text-civil-navy font-sans text-sm font-semibold rounded-lg border border-slate-300 shadow-xs transition-all" href="#samples"><span class="material-symbols-outlined text-[19px] text-slate-500">visibility</span><span class="">Inspect Sample Heatmap</span></a></div><div class="flex flex-wrap items-center gap-y-1.5 gap-x-5 text-slate-600 font-mono text-xs pt-1"><span class="inline-flex items-center gap-1.5"><span class="material-symbols-outlined text-emerald-600 text-[17px]">verified</span>Free file check</span><span class="inline-flex items-center gap-1.5"><span class="material-symbols-outlined text-emerald-600 text-[17px]">lock</span>Strict NDA privacy</span><span class="inline-flex items-center gap-1.5"><span class="material-symbols-outlined text-emerald-600 text-[17px]">schedule</span>24-hr rush available</span></div></div></div><div class="lg:col-span-5 flex flex-col gap-3" id="services"><div class="bg-white border-l-4 border-l-amber-500 border-y border-r border-slate-200 rounded-lg p-3.5 shadow-xs flex items-center justify-between gap-3"><div class="space-y-0.5"><div class="font-mono text-[11px] font-bold uppercase tracking-wider text-amber-700">Turnaround SLA</div><div class="font-sans text-sm sm:text-base font-bold text-civil-navy">Standard 48–72 Hr Delivery</div><p class="font-body text-xs text-slate-500">Fast response for residential &amp; commercial bids</p></div><span class="font-mono text-[11px] bg-amber-50 text-amber-800 border border-amber-200 px-2 py-1 rounded font-semibold shrink-0 text-center">2–3 DAYS<br><span class="text-[9px] uppercase text-amber-700">Guaranteed</span></span></div><div class="bg-white border-l-4 border-l-blue-600 border-y border-r border-slate-200 rounded-lg p-3.5 shadow-xs flex items-center justify-between gap-3"><div class="space-y-0.5"><div class="font-mono text-[11px] font-bold uppercase tracking-wider text-blue-700">Field-Ready Deliverables</div><div class="font-sans text-sm sm:text-base font-bold text-civil-navy">Color Cut/Fill Heatmaps</div><p class="font-body text-xs text-slate-500">High-contrast grid &amp; daylight tie-in overlays</p></div><span class="font-mono text-[11px] bg-blue-50 text-blue-800 border border-blue-200 px-2 py-1 rounded font-semibold shrink-0">PDF &amp; CAD</span></div><div class="bg-white border-l-4 border-l-emerald-600 border-y border-r border-slate-200 rounded-lg p-3.5 shadow-xs flex items-center justify-between gap-3"><div class="space-y-0.5"><div class="font-mono text-[11px] font-bold uppercase tracking-wider text-emerald-700">Verified Accuracy</div><div class="font-sans text-sm sm:text-base font-bold text-civil-navy">Trained Civil 3D Specialists</div><p class="font-body text-xs text-slate-500">Grading, subgrades, and plan bust detection</p></div><span class="font-mono text-[11px] bg-emerald-50 text-emerald-800 border border-emerald-200 px-2 py-1 rounded font-semibold shrink-0">7+ YEARS</span></div></div></div></section>
+<!-- SECTION 2: CORE TAKEOFF DELIVERABLES -->
+<section class="w-full bg-white border-y border-slate-200 py-14 lg:py-18" id="deliverables">
+<div class="max-w-[1280px] mx-auto px-6 lg:px-8">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-4 border-b border-slate-200 gap-4">
+<div>
+<div class="font-mono text-xs font-bold text-blue-700 uppercase tracking-wider mb-1">
+            STANDARD CONTRACTOR PACKAGE
+          </div>
+<h2 class="font-sans text-2xl lg:text-3xl font-extrabold text-civil-navy tracking-tight">
+            What You Receive In Every Earthwork Takeoff
+          </h2>
+</div>
+<p class="font-body text-slate-600 text-sm max-w-md">
+          Delivered in clean, format-compatible files designed to drop directly into your estimating spreadsheets and Trimble / Topcon rover controllers.
+        </p>
+</div>
+<!-- Deliverables 3-Column Display with Spec Sheets -->
+<div class="bg-white rounded-xl border border-slate-200 divide-y divide-slate-200 shadow-xs">
+  <div class="p-5 sm:p-6 flex items-start gap-4 hover:bg-slate-50 transition-colors">
+    <div class="w-10 h-10 rounded-lg bg-emerald-50 border border-emerald-200 flex items-center justify-center shrink-0 text-emerald-600 mt-0.5">
+      <span class="material-symbols-outlined text-[22px]">check_circle</span>
+    </div>
+    <div class="space-y-1">
+      <h3 class="font-sans text-base font-bold text-civil-navy">Volume Summary Reports</h3>
+      <p class="font-body text-sm text-slate-600 leading-relaxed">Precise net dirt quantities required to hit your proposed subgrade.</p>
+    </div>
+  </div>
+  <div class="p-5 sm:p-6 flex items-start gap-4 hover:bg-slate-50 transition-colors">
+    <div class="w-10 h-10 rounded-lg bg-amber-50 border border-amber-200 flex items-center justify-center shrink-0 text-amber-600 mt-0.5">
+      <span class="material-symbols-outlined text-[22px]">layers</span>
+    </div>
+    <div class="space-y-1">
+      <h3 class="font-sans text-base font-bold text-civil-navy">Visual Color-Coded Maps</h3>
+      <p class="font-body text-sm text-slate-600 leading-relaxed">High-visibility surface grid overlays showing exact cut and fill depths across the entire site footprint.</p>
+    </div>
+  </div>
+  <div class="p-5 sm:p-6 flex items-start gap-4 hover:bg-slate-50 transition-colors">
+    <div class="w-10 h-10 rounded-lg bg-blue-50 border border-blue-200 flex items-center justify-center shrink-0 text-blue-700 mt-0.5">
+      <span class="material-symbols-outlined text-[22px]">table_chart</span>
+    </div>
+    <div class="space-y-1">
+      <h3 class="font-sans text-base font-bold text-civil-navy">Elevation Tables</h3>
+      <p class="font-body text-sm text-slate-600 leading-relaxed">Clear, professional data tables ready to drop straight into your bid spreadsheets.</p>
+    </div>
+  </div>
+  <div class="p-5 sm:p-6 flex items-start gap-4 hover:bg-slate-50 transition-colors">
+    <div class="w-10 h-10 rounded-lg bg-slate-100 border border-slate-300 flex items-center justify-center shrink-0 text-slate-700 mt-0.5">
+      <span class="material-symbols-outlined text-[22px]">tune</span>
+    </div>
+    <div class="space-y-1">
+      <h3 class="font-sans text-base font-bold text-civil-navy">Additional Services Upon Request</h3>
+      <p class="font-body text-sm text-slate-600 leading-relaxed">Need topsoil stripped/respread volumes, utility trenching/bedding by the linear foot, or pavement area takeoffs? Just ask in your upload notes. Deliverable presentation is customizable upon request.</p>
+    </div>
+  </div>
+</div>
+<!-- Specialty Scopes Ribbon -->
+
+<div class="mt-6 bg-civil-navy text-white rounded-xl border border-slate-800 p-5 shadow-xs flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
+  <div class="flex items-start sm:items-center gap-3.5">
+    <div class="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center shrink-0 text-amber-400">
+      <span class="material-symbols-outlined text-[22px]">precision_manufacturing</span>
+    </div>
+    <div>
+      <div class="font-mono text-[11px] font-bold text-amber-400 uppercase tracking-wider mb-0.5">ADDITIONAL SCOPES &amp; GPS MODELING</div>
+      <p class="font-body text-xs sm:text-sm text-slate-300 max-w-2xl leading-relaxed">Need specialty scopes like topsoil stripping, utility trench excavation, curb/pavement subgrade, or 3D TIN (.LandXML) machine control surfaces? We tailor any takeoff to your exact bid requirements.</p>
+    </div>
+  </div>
+  <a href="#upload-desk" class="shrink-0 inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white font-sans text-xs sm:text-sm font-bold px-4 py-2.5 rounded-lg shadow-sm transition-all">
+    <span class="material-symbols-outlined text-[18px]">add_circle</span>
+    <span class="">Add Specialty Scopes to Bid</span>
+  </a>
+</div></div>
+</section>
+<!-- SECTION 3: TRANSPARENT PRICING MATRIX -->
+<section class="w-full max-w-[1280px] mx-auto px-6 lg:px-8 py-14 lg:py-18" id="pricing">
+<div class="max-w-2xl mx-auto text-center mb-10">
+<div class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded bg-amber-50 border border-amber-200 font-mono text-xs font-bold text-amber-800 uppercase tracking-wider mb-2">
+        UPFRONT ESTIMATING FEES
+      </div>
+<h2 class="font-sans text-2xl lg:text-3xl font-extrabold text-civil-navy tracking-tight">
+        Transparent, Project-Based Flat Rates
+      </h2>
+<p class="font-body text-slate-600 text-sm sm:text-base mt-2">
+        No ambiguous hourly billings or monthly retainers. You know your takeoff expense upfront so you can build it directly into your bid package.
+      </p>
+</div>
+<!-- Pricing Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+<!-- Tier 1: Small Sites -->
+<div class="bg-white rounded-xl border border-slate-300 p-6 flex flex-col justify-between shadow-xs hover:border-slate-400 transition-colors">
+<div>
+<div class="flex justify-between items-center pb-3 border-b border-slate-200 mb-4">
+<span class="font-mono text-xs font-bold text-slate-500 uppercase">TIER 1</span>
+<span class="font-mono text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-semibold">UNDER 2 ACRES</span>
+</div>
+<h3 class="font-sans text-xl font-bold text-civil-navy">Small Sites &amp; Pads</h3>
+<p class="font-body text-xs text-slate-500 mt-1 mb-5">Single-family lots, gas stations, fast-food pads, single warehouse pads.</p>
+<div class="mb-6 pb-6 border-b border-slate-100">
+<div class="flex items-baseline gap-1">
+<span class="font-sans text-4xl font-extrabold text-civil-navy">$350</span>
+<span class="font-mono text-xs text-slate-500 font-bold">/ Flat Fee</span>
+</div>
+<span class="font-mono text-[11px] text-emerald-700 font-semibold block mt-1">2–3 Business Day Turnaround</span>
+</div>
+<ul class="space-y-2.5 font-body text-xs text-slate-700 mb-6">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-600 text-[18px]">check</span>
+<span class="">Net Cut &amp; Fill Volume Summary (CY)</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-600 text-[18px]">check</span>
+<span class="">24"x36" Color Cut/Fill Gradient PDF</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-600 text-[18px]">check</span>
+<span class="">Elevation &amp; Boundary Daylight Audit</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-600 text-[18px]">check</span>
+<span class="">Shrink / Swell calculations included</span>
+</li>
+</ul>
+</div>
+<a class="w-full py-2.5 bg-slate-100 hover:bg-slate-200 text-civil-navy font-sans text-xs font-bold text-center rounded-lg border border-slate-300 transition-colors" href="#upload-desk">
+          Upload Plans for Tier 1 ($350)
+        </a>
+</div>
+<!-- Tier 2: Medium Developments (Featured) -->
+<div class="bg-white rounded-xl border-2 border-amber-600 p-6 flex flex-col justify-between shadow-md relative">
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-amber-600 text-white font-mono text-[11px] font-bold px-3 py-0.5 rounded shadow-xs uppercase tracking-wider">
+          MOST REQUESTED FOR BIDDING
+        </div>
+<div>
+<div class="flex justify-between items-center pb-3 border-b border-slate-200 mb-4 mt-1">
+<span class="font-mono text-xs font-bold text-amber-700 uppercase">TIER 2</span>
+<span class="font-mono text-xs bg-amber-50 text-amber-800 px-2 py-0.5 rounded font-semibold border border-amber-200">2 TO 10 ACRES</span>
+</div>
+<h3 class="font-sans text-xl font-bold text-civil-navy">Medium Developments</h3>
+<p class="font-body text-xs text-slate-500 mt-1 mb-5">Subdivisions, retail strips, distribution centers, parking expansions.</p>
+<div class="mb-6 pb-6 border-b border-slate-100">
+<div class="flex items-baseline gap-1">
+<span class="font-sans text-4xl font-extrabold text-civil-navy">$850</span>
+<span class="font-mono text-xs text-slate-500 font-bold">/ Flat Fee</span>
+</div>
+<span class="font-mono text-[11px] text-emerald-700 font-semibold block mt-1">2–3 Business Day Guaranteed SLA</span>
+</div>
+<ul class="space-y-2.5 font-body text-xs text-slate-700 mb-6">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-600 text-[18px]">check</span>
+<span class="">Volume Breakdown by Individual Pad &amp; Basin</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-600 text-[18px]">check</span>
+<span class="">50'x50' Cut/Fill Grid Layout with Stationing</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-600 text-[18px]">check</span>
+<span class="">Complete Civil 3D Surface Model Audit</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-600 text-[18px]">check</span>
+<span class="">Excel Export + Multi-Page Color PDF Maps</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-600 text-[18px]">check</span>
+<span class="">Direct Phone Q&amp;A with Takeoff Engineer</span>
+</li>
+</ul>
+</div>
+<a class="w-full py-2.5 bg-amber-600 hover:bg-amber-700 text-white font-sans text-xs font-bold text-center rounded-lg shadow-sm transition-colors" href="#upload-desk">
+          Upload Plans for Tier 2 ($850)
+        </a>
+</div>
+<!-- Tier 3: Large / Corridor -->
+<div class="bg-white rounded-xl border border-slate-300 p-6 flex flex-col justify-between shadow-xs hover:border-slate-400 transition-colors">
+<div>
+<div class="flex justify-between items-center pb-3 border-b border-slate-200 mb-4">
+<span class="font-mono text-xs font-bold text-slate-500 uppercase">TIER 3</span>
+<span class="font-mono text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-semibold">10+ ACRES / ROADWAY</span>
+</div>
+<h3 class="font-sans text-xl font-bold text-civil-navy">Large &amp; Corridor Sites</h3>
+<p class="font-body text-xs text-slate-500 mt-1 mb-5">Multi-phase developments, highway alignments, massive earthmoving.</p>
+<div class="mb-6 pb-6 border-b border-slate-100">
+<div class="flex items-baseline gap-1">
+<span class="font-sans text-4xl font-extrabold text-civil-navy">Custom</span>
+<span class="font-mono text-xs text-slate-500 font-bold">/ Fast Scope Quote</span>
+</div>
+<span class="font-mono text-[11px] text-slate-600 font-semibold block mt-1">Quotes provided within 2-4 hours</span>
+</div>
+<ul class="space-y-2.5 font-body text-xs text-slate-700 mb-6">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-600 text-[18px]">check</span>
+<span class="">Phased Mass Haul &amp; Staging Calculations</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-600 text-[18px]">check</span>
+<span class="">GPS Machine Control TIN (.LandXML) Surfaces</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-600 text-[18px]">check</span>
+<span class="">Corridor Cross-Section Volume Audits</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-600 text-[18px]">check</span>
+<span class="">Priority Estimator Project Check-In Call</span>
+</li>
+</ul>
+</div>
+<a class="w-full py-2.5 bg-slate-100 hover:bg-slate-200 text-civil-navy font-sans text-xs font-bold text-center rounded-lg border border-slate-300 transition-colors" href="#upload-desk">
+          Request Custom Proposal
+        </a>
+</div>
+</div>
+<!-- Rush Notice Callout -->
+<div class="mt-8 bg-slate-100 border border-slate-300 rounded-xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+<div class="flex items-center gap-2.5">
+<span class="bg-amber-600 text-white font-mono text-[11px] font-bold px-2 py-0.5 rounded">RUSH SLA</span>
+<span class="font-body text-xs sm:text-sm text-slate-700">
+<strong>Tight bid deadline tomorrow morning?</strong> Expedited 24-hour delivery is available on request.
+        </span>
+</div>
+<a class="font-mono text-xs text-amber-700 hover:text-amber-800 font-bold whitespace-nowrap" href="tel:7242217521">
+        Call (724) 221-7521 for Rush Confirmation →
+      </a>
+</div>
+</section>
+<!-- SECTION 4: SAMPLE HEATMAP & AUTHENTIC CUT SHEET AUDIT -->
+<section class="w-full bg-white border-y border-slate-200 py-14 lg:py-18" id="samples">
+<div class="max-w-[1280px] mx-auto px-6 lg:px-8">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-4 border-b border-slate-200 gap-4">
+<div>
+<div class="font-mono text-xs font-bold text-emerald-700 uppercase tracking-wider mb-1">
+            VERIFIABLE ENGINEERING STANDARDS
+          </div>
+<h2 class="font-sans text-2xl lg:text-3xl font-extrabold text-civil-navy tracking-tight">
+            Field-Tested Accuracy Out On The Jobsite
+          </h2>
+</div>
+<p class="font-body text-slate-600 text-sm max-w-md">
+          Sample model deliverables generated from actual grading plans. Every surface is bound checked against perimeter tie-ins.
+        </p>
+</div>
+<!-- 2-Column Presentation: Heatmap Screen & Live Cut Sheet -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left Column: Civil 3D Graphic & Surface Metrics -->
+<div class="lg:col-span-7 bg-slate-900 rounded-xl border border-slate-800 overflow-hidden shadow-sm">
+<div class="bg-civil-navy text-slate-300 px-4 py-2.5 border-b border-slate-800 flex justify-between items-center text-xs font-mono">
+<span class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+              AUTODESK CIVIL 3D 2024 • SURFACE VOLUMES
+            </span>
+<span class="text-amber-400 font-semibold">TIN COMPOSITE</span>
+</div>
+<div class="relative bg-slate-950">
+<img alt="Civil 3D Earthwork Surface Map Heatmap" class="w-full h-auto object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1WEgYBo-wlf_9OkWgT8wetxgMhQnF4rR1H5xdBRrDdVeQTxSH7G96ePxn3PIOm2J4Qm5fylrCv8jiita86esLModanvAGgxybJqX2c4heevS3X7WpFjfp4wbsBmUlFDxoKlzobYk6nOAOIHwrbVCjkmxCEl0LHXq2peLUvGrfs70qq8tfgFSRFjMXlKlw0ohPWKuyu8Fwq-DNbYUYTA_fHeloot2cyg_IHo1VEIw2Y3lTP7hDT3N2JvUtQ">
+</div>
+<!-- Bottom Metric Bar -->
+<div class="grid grid-cols-2 sm:grid-cols-4 divide-x divide-slate-800 bg-slate-900 border-t border-slate-800 text-center font-mono py-3 px-2">
+<div class="px-2">
+<span class="text-[10px] uppercase text-rose-400 block font-semibold">Cut Volume</span>
+<span class="text-sm font-bold text-white">12,500 CY</span>
+</div>
+<div class="px-2">
+<span class="text-[10px] uppercase text-blue-400 block font-semibold">Fill Volume</span>
+<span class="text-sm font-bold text-white">14,200 CY</span>
+</div>
+<div class="px-2">
+<span class="text-[10px] uppercase text-amber-400 block font-semibold">Net Balance</span>
+<span class="text-sm font-bold text-amber-300">+1,700 CY (FILL)</span>
+</div>
+<div class="px-2">
+<span class="text-[10px] uppercase text-emerald-400 block font-semibold">Perimeter Ties</span>
+<span class="text-sm font-bold text-emerald-300">100% Verified</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Contractor Field Audit Cut Sheet -->
+<div class="lg:col-span-5 bg-white rounded-xl border border-slate-300 shadow-xs overflow-hidden">
+<div class="bg-civil-navy text-white px-4 py-3 flex justify-between items-center">
+<div class="font-sans font-bold text-sm">Cut / Fill Station Elevation Sheet</div>
+<span class="font-mono text-[11px] bg-slate-800 text-amber-300 px-2 py-0.5 rounded border border-slate-700">SUBGRADE CHECK</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left font-mono text-xs">
+<thead class="bg-slate-100 text-slate-700 border-b border-slate-200">
+<tr>
+<th class="py-2.5 px-3 font-bold">STATION / ZONE</th>
+<th class="py-2.5 px-3 font-bold text-right">EXIST</th>
+<th class="py-2.5 px-3 font-bold text-right">PROP</th>
+<th class="py-2.5 px-3 font-bold text-right">DIFF (FT)</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-200 text-slate-700">
+<tr class="hover:bg-slate-50">
+<td class="py-2 px-3 font-medium text-civil-navy">STA 0+00 – 1+50</td>
+<td class="py-2 px-3 text-right">248.50'</td>
+<td class="py-2 px-3 text-right">245.00'</td>
+<td class="py-2 px-3 text-right">
+<span class="inline-block px-1.5 py-0.5 bg-rose-50 text-rose-700 border border-rose-200 rounded font-bold">-3.50' CUT</span>
+</td>
+</tr>
+<tr class="hover:bg-slate-50">
+<td class="py-2 px-3 font-medium text-civil-navy">STA 1+50 – 3+00</td>
+<td class="py-2 px-3 text-right">246.00'</td>
+<td class="py-2 px-3 text-right">248.00'</td>
+<td class="py-2 px-3 text-right">
+<span class="inline-block px-1.5 py-0.5 bg-blue-50 text-blue-700 border border-blue-200 rounded font-bold">+2.00' FILL</span>
+</td>
+</tr>
+<tr class="hover:bg-slate-50">
+<td class="py-2 px-3 font-medium text-civil-navy">Building Pad A</td>
+<td class="py-2 px-3 text-right">254.00'</td>
+<td class="py-2 px-3 text-right">248.50'</td>
+<td class="py-2 px-3 text-right">
+<span class="inline-block px-1.5 py-0.5 bg-rose-50 text-rose-700 border border-rose-200 rounded font-bold">-5.50' CUT</span>
+</td>
+</tr>
+<tr class="hover:bg-slate-50">
+<td class="py-2 px-3 font-medium text-civil-navy">Retaining Wall Heel</td>
+<td class="py-2 px-3 text-right">244.20'</td>
+<td class="py-2 px-3 text-right">241.00'</td>
+<td class="py-2 px-3 text-right">
+<span class="inline-block px-1.5 py-0.5 bg-rose-50 text-rose-700 border border-rose-200 rounded font-bold">-3.20' CUT</span>
+</td>
+</tr>
+<tr class="hover:bg-slate-50">
+<td class="py-2 px-3 font-medium text-civil-navy">Basin Forebay Sump</td>
+<td class="py-2 px-3 text-right">242.00'</td>
+<td class="py-2 px-3 text-right">238.50'</td>
+<td class="py-2 px-3 text-right">
+<span class="inline-block px-1.5 py-0.5 bg-rose-50 text-rose-700 border border-rose-200 rounded font-bold">-3.50' CUT</span>
+</td>
+</tr>
+<tr class="hover:bg-slate-50">
+<td class="py-2 px-3 font-medium text-civil-navy">Parking Stall Swale</td>
+<td class="py-2 px-3 text-right">247.10'</td>
+<td class="py-2 px-3 text-right">248.90'</td>
+<td class="py-2 px-3 text-right">
+<span class="inline-block px-1.5 py-0.5 bg-blue-50 text-blue-700 border border-blue-200 rounded font-bold">+1.80' FILL</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-3.5 bg-slate-50 border-t border-slate-200 font-body text-xs text-slate-600 flex items-start gap-2">
+<span class="material-symbols-outlined text-amber-600 text-[18px] shrink-0">info</span>
+<span class="">
+<strong>Takeoff Note:</strong> Contours tied out clean at all boundary fence lines. Swale subgrade adjusted for 4" topsoil respread and aggregate bedding.
+            </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: PRACTICAL INTAKE FORM / FILE UPLOAD DESK -->
+<section class="w-full max-w-[1280px] mx-auto px-6 lg:px-8 py-14 lg:py-18" id="upload-desk">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+<!-- Left Side: Context & Contractor Trust -->
+<div class="lg:col-span-5 space-y-6">
+<div>
+<div class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded bg-amber-50 border border-amber-200 font-mono text-xs font-bold text-amber-800 uppercase tracking-wider mb-2">
+            FILE UPLOAD DESK
+          </div>
+<h2 class="font-sans text-2xl lg:text-3xl font-extrabold text-civil-navy tracking-tight">
+            Submit Your Plans for an Upfront Quote
+          </h2>
+<p class="font-body text-slate-600 text-sm sm:text-base mt-2 leading-relaxed">
+            Drop your civil plan set (PDF or CAD). We will evaluate the sheet count, check the site acreage, and return a fixed-price proposal within 2–4 hours during business days.
+          </p>
+</div>
+<!-- Practical Checklist Card -->
+<div class="bg-white rounded-xl border border-slate-300 p-5 space-y-4">
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded bg-slate-100 border border-slate-300 flex items-center justify-center shrink-0 text-slate-700 font-mono font-bold text-xs">
+              01
+            </div>
+<div>
+<strong class="font-sans text-xs font-bold text-civil-navy block">Send Whatever You Have</strong>
+<span class="font-body text-xs text-slate-600">Full sets, single grading sheets, CAD files (.dwg), or scanned bid sets.</span>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded bg-slate-100 border border-slate-300 flex items-center justify-center shrink-0 text-slate-700 font-mono font-bold text-xs">
+              02
+            </div>
+<div>
+<strong class="font-sans text-xs font-bold text-civil-navy block">Strict NDA &amp; Bid Privacy</strong>
+<span class="font-body text-xs text-slate-600">Your bid identity, location data, and subcontractors remain strictly private.</span>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded bg-slate-100 border border-slate-300 flex items-center justify-center shrink-0 text-slate-700 font-mono font-bold text-xs">
+              03
+            </div>
+<div>
+<strong class="font-sans text-xs font-bold text-civil-navy block">Speak With the Modeler</strong>
+<span class="font-body text-xs text-slate-600">You talk directly to the civil takeoff specialist calculating your site volumes.</span>
+</div>
+</div>
+</div>
+<!-- Phone Card -->
+<div class="bg-civil-navy text-white p-5 rounded-xl border border-slate-800">
+<span class="font-mono text-[11px] text-amber-400 font-bold uppercase tracking-wider block mb-1">CALL FOR IMMEDIATE TURNAROUND</span>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mt-1">
+<a class="font-mono text-xl font-bold text-white hover:text-amber-400 transition-colors" href="tel:7242217521">
+              (724) 221-7521
+            </a>
+<span class="text-xs font-mono text-slate-300">Estimator On Duty</span>
+</div>
+</div>
+</div>
+<!-- Right Side: Clean Battle-Tested Intake Form -->
+<div class="lg:col-span-7 bg-white rounded-xl border border-slate-300 shadow-sm p-6 sm:p-8">
+<form class="space-y-4" onsubmit="event.preventDefault(); alert('Plans received! Our estimating desk will review your scope and email your flat-rate proposal within 2-4 hours.');">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label class="block font-sans text-xs font-bold text-civil-navy mb-1">Contractor / Firm Name *</label>
+<input class="w-full h-10 px-3 rounded-lg border border-slate-300 bg-white text-slate-900 text-sm focus:outline-none focus:ring-1 focus:ring-amber-500 focus:border-amber-500 placeholder:text-slate-400" placeholder="e.g. Keystone Excavating &amp; Site LLC" required="" type="text">
+</div>
+<div>
+<label class="block font-sans text-xs font-bold text-civil-navy mb-1">Contact Person Name *</label>
+<input class="w-full h-10 px-3 rounded-lg border border-slate-300 bg-white text-slate-900 text-sm focus:outline-none focus:ring-1 focus:ring-amber-500 focus:border-amber-500 placeholder:text-slate-400" placeholder="e.g. Marcus Vance, Chief Estimator" required="" type="text">
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label class="block font-sans text-xs font-bold text-civil-navy mb-1">Phone Number *</label>
+<input class="w-full h-10 px-3 rounded-lg border border-slate-300 bg-white text-slate-900 text-sm focus:outline-none focus:ring-1 focus:ring-amber-500 focus:border-amber-500 placeholder:text-slate-400" placeholder="(724) 555-0192" required="" type="tel">
+</div>
+<div>
+<label class="block font-sans text-xs font-bold text-civil-navy mb-1">Email for Quote Delivery *</label>
+<input class="w-full h-10 px-3 rounded-lg border border-slate-300 bg-white text-slate-900 text-sm focus:outline-none focus:ring-1 focus:ring-amber-500 focus:border-amber-500 placeholder:text-slate-400" placeholder="bids@keystone-site.com" required="" type="email">
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label class="block font-sans text-xs font-bold text-civil-navy mb-1">Project Name &amp; Location *</label>
+<input class="w-full h-10 px-3 rounded-lg border border-slate-300 bg-white text-slate-900 text-sm focus:outline-none focus:ring-1 focus:ring-amber-500 focus:border-amber-500 placeholder:text-slate-400" placeholder="Route 19 Commercial Pad, Cranberry PA" required="" type="text">
+</div>
+<div>
+<label class="block font-sans text-xs font-bold text-civil-navy mb-1">Bid Due Date *</label>
+<input class="w-full h-10 px-3 rounded-lg border border-slate-300 bg-white text-slate-900 text-sm focus:outline-none focus:ring-1 focus:ring-amber-500 focus:border-amber-500" required="" type="date">
+</div>
+</div>
+<!-- Drag and Drop Plan Container -->
+<div>
+<label class="block font-sans text-xs font-bold text-civil-navy mb-1">Upload Plan Files (Grading, Existing, Utility Sheets) *</label>
+<div class="border-2 border-dashed border-slate-300 hover:border-amber-600 bg-slate-50 hover:bg-white p-6 rounded-xl text-center transition-all cursor-pointer relative group">
+<input class="absolute inset-0 opacity-0 cursor-pointer w-full h-full" multiple="" type="file">
+<div class="flex flex-col items-center justify-center pointer-events-none">
+<div class="w-10 h-10 rounded-full bg-white border border-slate-200 shadow-xs flex items-center justify-center text-amber-600 mb-2 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[24px]">cloud_upload</span>
+</div>
+<p class="font-sans text-xs font-bold text-civil-navy">
+                  Drag &amp; drop plan files here or <span class="text-amber-700 underline">Browse Local Files</span>
+</p>
+<p class="font-mono text-[11px] text-slate-500 mt-1">
+                  Supports .PDF, .DWG, .DXF, .KMZ, or .LandXML (up to 75MB per upload)
+                </p>
+</div>
+</div>
+</div>
+<!-- Specific Instructions -->
+<div>
+<label class="block font-sans text-xs font-bold text-civil-navy mb-1">Specific Scope Instructions / Notes (Optional)</label>
+<textarea class="w-full p-3 rounded-lg border border-slate-300 bg-white text-slate-900 text-xs sm:text-sm focus:outline-none focus:ring-1 focus:ring-amber-500 focus:border-amber-500 placeholder:text-slate-400" placeholder="e.g. Please isolate building pad cut/fill from parking lot subgrade, deduct 6 inches of topsoil strip, and calculate storm trench LF." rows="3"></textarea>
+</div>
+<!-- Submit Button -->
+<button class="w-full py-3 bg-amber-600 hover:bg-amber-700 text-white font-sans text-sm font-bold rounded-lg shadow-sm transition-colors flex items-center justify-center gap-2" type="submit">
+<span class="material-symbols-outlined text-[18px]">send</span>
+<span class="">Submit Plans for Formal 2-4 Hr Quote</span>
+</button>
+<div class="text-center pt-1 font-mono text-[11px] text-slate-500 flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-emerald-600 text-[16px]">lock</span>
+            Files are strictly confidential and encrypted under standard contractor NDA.
+          </div>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- FOOTER -->
+<footer class="bg-civil-dark text-slate-300 border-t border-slate-800">
+<div class="w-full px-6 lg:px-8 py-12 lg:py-14 max-w-[1280px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start pb-8 border-b border-slate-800">
+<!-- Brand & Summary -->
+<div class="md:col-span-5 space-y-4">
+<div class="bg-white p-2 rounded-lg inline-block">
+<img alt="Grounded Measures LLC Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArNcAWcXj_d-KIriHHoGXvmkiSQgB2vSJpz0UwN-qW5_Fg8ccMDwkGez_gHNAJC5EBpLxhMKxDaIlcCYzO33iUXXx-2ymvNcfjAkiMSAtIR7aDZ5j7NmXuu0QRl4OdqUKacOiC0y1iFEc64IQv9HeAG4CEhCxTMR5X8xjOJRHMgU6rzmefNYsp94CIGfWnP5QnuIqXMGpJN1pVVE2e36Dkc1uU6o_ZdAwUePrMtTKJQGM-vEN9VVnbEiRxby4eGy78U5s">
+</div>
+<p class="font-body text-xs sm:text-sm text-slate-400 max-w-sm leading-relaxed">
+          Independent civil 3D earthwork calculations, surface modeling, and cut-and-fill quantity audits for site excavators, utility contractors, and estimators nationwide.
+        </p>
+<div class="font-mono text-xs text-amber-400 space-y-1">
+<div class="">WESTERN PENNSYLVANIA HEADQUARTERS</div>
+<div class="text-slate-300 font-semibold">(724) 221-7521 • BIDS@GROUNDEDMEASURES.COM</div>
+</div>
+</div>
+<!-- Practical Site Links -->
+<div class="md:col-span-3 font-mono text-xs space-y-2.5">
+<span class="text-amber-400 font-bold uppercase tracking-wider block mb-3">SERVICES &amp; STANDARDS</span>
+<ul class="space-y-2 text-slate-400">
+<li class=""><a class="hover:text-amber-400 transition-colors" href="#services">Civil 3D Methodology</a></li>
+<li class=""><a class="hover:text-amber-400 transition-colors" href="#pricing">Flat Rate Pricing Table</a></li>
+<li class=""><a class="hover:text-amber-400 transition-colors" href="#samples">Sample Surface Heatmaps</a></li>
+<li class=""><a class="hover:text-amber-400 transition-colors" href="#upload-desk">Contractor Intake Portal</a></li>
+<li class=""><a class="hover:text-amber-400 transition-colors" href="tel:7242217521">24-Hour Rush Desk</a></li>
+</ul>
+</div>
+<!-- Legal Estimating Disclaimer -->
+<div class="md:col-span-4 bg-white/5 rounded-xl p-4 border border-white/10 font-body text-xs text-slate-400 leading-relaxed">
+<span class="font-mono text-[11px] text-amber-400 font-bold uppercase tracking-wider block mb-1.5">PROFESSIONAL DISCLAIMER</span>
+        Grounded Measures, LLC provides technical earthwork quantity takeoffs and CAD surface volume calculations for bidding and estimating preparation. Actual field conditions, rock classifications, soil borings, and final engineer-of-record plan revisions must be verified prior to construction lock.
+      </div>
+</div>
+<!-- Bottom Copyright Strip -->
+<div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs font-mono text-slate-500">
+<div class="">
+        © 2025 Grounded Measures LLC. All Rights Reserved. Precision Earthwork Estimating.
+      </div>
+<div class="text-amber-400 font-semibold">
+        CIVIL 3D TAKEOFFS • WESTERN PA &amp; NATIONWIDE
+      </div>
+</div>
+</div>
+</footer>
+
+
+
+
+</body></html>
