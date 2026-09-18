@@ -46,7 +46,7 @@ export default function Deliverables() {
             </div>
           ))}
         </div>
-
+        {/* CTA */}
         {/* <div className="mt-6 bg-civil-navy text-white rounded-xl border border-slate-800 p-5 shadow-xs flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
           <div className="flex items-start sm:items-center gap-3.5">
             <div className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center shrink-0 text-amber-400">
