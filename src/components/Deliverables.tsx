@@ -18,14 +18,13 @@ export default function Deliverables() {
             </h2>
           </div>
           <p className="font-body text-slate-600 text-sm max-w-md">
-            Delivered in clean, format-compatible files designed to drop
-            directly into your estimating spreadsheets and Trimble / Topcon
-            rover controllers.
+            Clean PDF summary reports for your bid package plus exportable CAD
+            and LandXML files ready for GPS machine control.
           </p>
         </div>
 
-        <div className="bg-white rounded-xl border border-slate-200 divide-y divide-slate-200 shadow-xs">
-          {DELIVERABLES.map((item) => (
+        <div className="grid grid-cols-2 gap-4 bg-white rounded-xl border border-slate-200 divide-y divide-slate-200 shadow-xs">
+          {DELIVERABLES.slice(0, 2).map((item) => (
             <div
               key={item.title}
               className="p-5 sm:p-6 flex items-start gap-4 hover:bg-slate-50 transition-colors"
@@ -46,6 +45,59 @@ export default function Deliverables() {
             </div>
           ))}
         </div>
+
+        <div className="my-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="flex justify-center items-center rounded-xl border border-slate-200 overflow-hidden shadow-xs bg-slate-50">
+            <img
+              alt="Sample cut/fill volume summary deliverable"
+              className="w-full max-w-1/2 h-auto  object-contain"
+              src="/SAMPLE_1.png"
+            />
+          </div>
+          <div className="rounded-xl border border-slate-200 overflow-hidden shadow-xs bg-slate-50">
+            <img
+              alt="Sample color-coded cut/fill heat map deliverable"
+              className="w-full h-auto object-cover"
+              src="/SAMPLE_2.png"
+            />
+          </div>
+        </div>
+
+        <div className="mb-4 flex justify-center">
+          <a
+            className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-white hover:bg-slate-100 text-civil-navy font-sans text-sm font-semibold rounded-lg border border-slate-300 shadow-xs transition-all"
+            href="/DELIVERABLES.pdf"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <Icon name="visibility" className="text-[19px] text-slate-500" />
+            <span>View Sample Deliverables</span>
+          </a>
+        </div>
+
+        <div className="bg-white rounded-xl border border-slate-200 divide-y divide-slate-200 shadow-xs">
+          {DELIVERABLES.slice(2, 3).map((item) => (
+            <div
+              key={item.title}
+              className="p-5 sm:p-6 flex items-start gap-4 hover:bg-slate-50 transition-colors"
+            >
+              <div
+                className={`w-10 h-10 rounded-lg border flex items-center justify-center shrink-0 mt-0.5 ${item.iconWrapClass}`}
+              >
+                <Icon name={item.icon} className="text-[22px]" />
+              </div>
+              <div className="space-y-1">
+                <h3 className="font-sans text-base font-bold text-civil-navy">
+                  {item.title}
+                </h3>
+                <p className="font-body text-sm text-slate-600 leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
         {/* CTA */}
         {/* <div className="mt-6 bg-civil-navy text-white rounded-xl border border-slate-800 p-5 shadow-xs flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
           <div className="flex items-start sm:items-center gap-3.5">

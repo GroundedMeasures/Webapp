@@ -1,12 +1,20 @@
 import { BRAND, CONTACT, NAV_LINKS } from "../constants";
+import Logo from "../../public/GM.png";
 import Icon from "./Icon";
 
 export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all">
       <div className="flex justify-between items-center w-full px-6 lg:px-8 py-3 max-w-[1280px] mx-auto">
-        <a className="flex items-center gap-3 transition-opacity hover:opacity-90" href="#">
-          <img alt={`${BRAND.name} Logo`} className="h-11 w-auto object-contain" src={BRAND.logoUrl} />
+        <a
+          className="flex items-center gap-3 transition-opacity hover:opacity-90"
+          href="#"
+        >
+          <img
+            alt={`${BRAND.name} Logo`}
+            className="h-11 w-auto object-contain"
+            src={Logo}
+          />
         </a>
         <nav className="hidden lg:flex items-center gap-7 text-xs font-mono font-semibold uppercase tracking-wider text-slate-600">
           {NAV_LINKS.map((link) => (

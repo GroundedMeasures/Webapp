@@ -7,13 +7,15 @@ export default function UtilityBar() {
         <div className="flex items-center gap-4">
           <span className="inline-flex items-center gap-1.5 text-slate-300">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-            Estimator Desk Open: {CONTACT.hours}
+            Autodesk Civil 3D Earthwork Takeoffs & Bid Checks
           </span>
           <span className="hidden md:inline text-slate-500">|</span>
-          <span className="hidden md:inline text-slate-400">Civil 3D 2024 • Carlson • AGTEK Compatible</span>
+          <span className="hidden md:inline text-slate-400">
+            Western PA & Nationwide
+          </span>
         </div>
         <div className="flex items-center gap-4">
-          <span className="text-slate-400">Direct Estimator Line:</span>
+          <span className="text-slate-400">Direct Line:</span>
           <a
             className="text-amber-400 hover:text-amber-300 font-semibold tracking-wide transition-colors"
             href={CONTACT.phoneHref}
@@ -21,7 +23,10 @@ export default function UtilityBar() {
             {CONTACT.phoneDisplay}
           </a>
           <span className="text-slate-500">|</span>
-          <a className="text-slate-300 hover:text-white transition-colors" href={CONTACT.emailHref}>
+          <a
+            className="text-slate-300 hover:text-white transition-colors"
+            href={CONTACT.emailHref}
+          >
             {CONTACT.email}
           </a>
         </div>

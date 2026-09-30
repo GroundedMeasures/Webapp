@@ -3,7 +3,10 @@ import Icon from "./Icon";
 
 export default function Pricing() {
   return (
-    <section className="w-full max-w-[1280px] mx-auto px-6 lg:px-8 py-14 lg:py-18" id="pricing">
+    <section
+      className="w-full max-w-[1280px] mx-auto px-6 lg:px-8 py-14 lg:py-18"
+      id="pricing"
+    >
       <div className="max-w-2xl mx-auto text-center mb-10">
         <div className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded bg-amber-50 border border-amber-200 font-mono text-xs font-bold text-amber-800 uppercase tracking-wider mb-2">
           UPFRONT ESTIMATING FEES
@@ -12,8 +15,9 @@ export default function Pricing() {
           Transparent, Project-Based Flat Rates
         </h2>
         <p className="font-body text-slate-600 text-sm sm:text-base mt-2">
-          No ambiguous hourly billings or monthly retainers. You know your takeoff expense upfront so you can build
-          it directly into your bid package.
+          No ambiguous hourly billings or monthly retainers. You know your
+          takeoff expense upfront so you can build it directly into your bid
+          package.
         </p>
       </div>
 
@@ -33,8 +37,12 @@ export default function Pricing() {
               </div>
             )}
             <div>
-              <div className={`flex justify-between items-center pb-3 border-b border-slate-200 mb-4 ${plan.featured ? "mt-1" : ""}`}>
-                <span className={`font-mono text-xs font-bold uppercase ${plan.featured ? "text-amber-700" : "text-slate-500"}`}>
+              <div
+                className={`flex justify-between items-center pb-3 border-b border-slate-200 mb-4 ${plan.featured ? "mt-1" : ""}`}
+              >
+                <span
+                  className={`font-mono text-xs font-bold uppercase ${plan.featured ? "text-amber-700" : "text-slate-500"}`}
+                >
                   {plan.tier}
                 </span>
                 <span
@@ -47,16 +55,31 @@ export default function Pricing() {
                   {plan.sizeLabel}
                 </span>
               </div>
-              <h3 className="font-sans text-xl font-bold text-civil-navy">{plan.name}</h3>
-              <p className="font-body text-xs text-slate-500 mt-1 mb-5">{plan.description}</p>
+              <h3 className="font-sans text-xl font-bold text-civil-navy">
+                {plan.name}
+              </h3>
+              <p className="font-body text-xs text-slate-500 mt-1 mb-5">
+                {plan.description}
+              </p>
               <div className="mb-6 pb-6 border-b border-slate-100">
+                {plan.priceQualifier && (
+                  <span className="font-mono text-[11px] text-slate-500 font-semibold uppercase tracking-wider block mb-0.5">
+                    {plan.priceQualifier}
+                  </span>
+                )}
                 <div className="flex items-baseline gap-1">
-                  <span className="font-sans text-4xl font-extrabold text-civil-navy">{plan.price}</span>
-                  <span className="font-mono text-xs text-slate-500 font-bold">{plan.priceUnit}</span>
+                  <span className="font-sans text-4xl font-extrabold text-civil-navy">
+                    {plan.price}
+                  </span>
+                  <span className="font-mono text-xs text-slate-500 font-bold">
+                    {plan.priceUnit}
+                  </span>
                 </div>
                 <span
                   className={`font-mono text-[11px] font-semibold block mt-1 ${
-                    plan.price === "Custom" ? "text-slate-600" : "text-emerald-700"
+                    plan.price === "Custom"
+                      ? "text-slate-600"
+                      : "text-emerald-700"
                   }`}
                 >
                   {plan.turnaround}
@@ -65,7 +88,10 @@ export default function Pricing() {
               <ul className="space-y-2.5 font-body text-xs text-slate-700 mb-6">
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-center gap-2">
-                    <Icon name="check" className="text-emerald-600 text-[18px]" />
+                    <Icon
+                      name="check"
+                      className="text-emerald-600 text-[18px]"
+                    />
                     <span>{feature}</span>
                   </li>
                 ))}
@@ -88,11 +114,11 @@ export default function Pricing() {
       <div className="mt-8 bg-slate-100 border border-slate-300 rounded-xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
         <div className="flex items-center gap-2.5">
           <span className="bg-amber-600 text-white font-mono text-[11px] font-bold px-2 py-0.5 rounded">
-            RUSH SLA
+            EXPEDITED
           </span>
           <span className="font-body text-xs sm:text-sm text-slate-700">
-            <strong>Tight bid deadline tomorrow morning?</strong> Expedited 24-hour delivery is available on
-            request.
+            <strong>Tight bid deadline tomorrow morning?</strong> Expedited
+            24-hour delivery is available upon schedule confirmation.
           </span>
         </div>
         <a
