@@ -50,15 +50,15 @@ export default function Deliverables() {
           <div className="flex justify-center items-center rounded-xl border border-slate-200 overflow-hidden shadow-xs bg-slate-50">
             <img
               alt="Sample cut/fill volume summary deliverable"
-              className="w-full max-w-1/2 h-auto  object-contain"
-              src="/SAMPLE_1.png"
+              className="w-full h-auto  object-cover"
+              src="/LEFT_SAMPLE.png"
             />
           </div>
           <div className="rounded-xl border border-slate-200 overflow-hidden shadow-xs bg-slate-50">
             <img
               alt="Sample color-coded cut/fill heat map deliverable"
               className="w-full h-auto object-cover"
-              src="/SAMPLE_2.png"
+              src="/RIGHT_SAMPLE.png"
             />
           </div>
         </div>
@@ -66,7 +66,7 @@ export default function Deliverables() {
         <div className="mb-4 flex justify-center">
           <a
             className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-white hover:bg-slate-100 text-civil-navy font-sans text-sm font-semibold rounded-lg border border-slate-300 shadow-xs transition-all"
-            href="/DELIVERABLES.pdf"
+            href="/SampleEarthworkQuantityTakeoff.pdf"
             rel="noopener noreferrer"
             target="_blank"
           >
