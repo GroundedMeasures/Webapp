@@ -1,5 +1,5 @@
 import type { IncomingMessage, ServerResponse } from "node:http";
-import { sendQuoteEmail, type QuoteRequestBody } from "./_lib/quote-email";
+import { sendQuoteEmail, type QuoteRequestBody } from "./_lib/quote-email.js";
 
 // Minimal shape of the request/response objects Vercel's Node.js runtime
 // actually provides at runtime (see https://vercel.com/docs/functions/runtimes/node-js).

@@ -1,5 +1,5 @@
 import { Resend } from "resend";
-import { CONTACT } from "../../src/constants";
+import { CONTACT } from "../../src/constants.js";
 
 // Base64 encoding inflates size ~33%, and Vercel hard-caps function request
 // bodies at 4.5MB (unconfigurable) — so raw files must stay well under that.
