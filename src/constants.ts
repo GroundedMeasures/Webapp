@@ -4,8 +4,8 @@
 export const CONTACT = {
   phoneDisplay: "(724) 221-7521",
   phoneHref: "tel:7242217521",
-  email: "Mrisnear@groundedmeasures.com",
-  emailHref: "mailto:Mrisnear@groundedmeasures.com",
+  email: "mrisnear@groundedmeasures.com",
+  emailHref: "mailto:mrisnear@groundedmeasures.com",
   hours: "Mon–Fri 7:00 AM – 5:00 PM EST",
   region: "Western Pennsylvania Headquarters",
 } as const;
