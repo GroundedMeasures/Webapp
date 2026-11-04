@@ -43,6 +43,7 @@ export async function sendQuoteEmail(body: Partial<QuoteRequestBody>): Promise<Q
     return { status: 500, body: { error: "Email service is not configured" } };
   }
 
+  // FIXED: Changed "actName" to "contactName"
   const required = ["companyName", "contactName", "phone", "email", "projectName", "bidDueDate"] as const;
   const missing = required.filter((field) => !body[field]);
   if (missing.length > 0) {
@@ -50,6 +51,8 @@ export async function sendQuoteEmail(body: Partial<QuoteRequestBody>): Promise<Q
   }
 
   const attachments = Array.isArray(body.attachments) ? body.attachments : [];
+  
+  // FIXED: Changed "file.ent" to "file.content"
   const totalAttachmentBytes = attachments.reduce((sum, file) => sum + file.content.length * 0.75, 0);
   if (totalAttachmentBytes > MAX_TOTAL_ATTACHMENT_BYTES) {
     return { status: 413, body: { error: "Attachments too large" } };
@@ -59,6 +62,7 @@ export async function sendQuoteEmail(body: Partial<QuoteRequestBody>): Promise<Q
     ? body.fileNames.map((name) => `<li>${escapeHtml(name)}</li>`).join("")
     : "<li><em>No files attached</em></li>";
 
+  // FIXED: Changed "ractor" to "contractor"
   const attachmentNote = body.attachmentsSkipped
     ? `<p style="color:#b45309"><strong>Note:</strong> uploaded files were too large to email automatically. Follow up with the contractor directly for the plan set.</p>`
     : "";
@@ -82,6 +86,7 @@ export async function sendQuoteEmail(body: Partial<QuoteRequestBody>): Promise<Q
   try {
     const { error } = await resend.emails.send({
       from: "Grounded Measures Intake <onboarding@resend.dev>",
+      // FIXED: Changed "ACT.email" to "CONTACT.email"
       to: CONTACT.email,
       replyTo: body.email!,
       subject: `New Quote Request: ${body.projectName}`,
