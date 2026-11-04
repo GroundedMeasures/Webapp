@@ -20,7 +20,6 @@ export const BRAND = {
 } as const;
 
 export const NAV_LINKS = [
-  { label: "Services", href: "#services" },
   { label: "Deliverables", href: "#deliverables" },
   { label: "Flat Pricing", href: "#pricing" },
   { label: "File Upload", href: "#upload-desk" },
@@ -117,7 +116,6 @@ export const PRICING_TIERS = [
     turnaround: "2-3 Business Day Turnaround",
     features: [
       "Volume Breakdown by Individual Pad & Basin",
-      "50'x50' Cut/Fill Grid Layout with Stationing",
       "Direct Phone Q&A with Takeoff Estimator",
     ],
     ctaLabel: "Upload Plans for Tier 2 ($850)",
@@ -159,6 +157,6 @@ export const INTAKE_CHECKLIST = [
     step: "03",
     title: "Prompt Scope Review",
     description:
-      "We review your plan set and follow up directly to confirm project details, sscope, and deliverable timelines.",
+      "We review your plan set and follow up directly to confirm project details, scope, and deliverable timelines.",
   },
 ] as const;

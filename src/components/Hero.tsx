@@ -37,13 +37,13 @@ export default function Hero() {
               </a>
               <a
                 className="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-white hover:bg-slate-100 text-civil-navy font-sans text-md font-semibold rounded-lg border border-slate-300 shadow-xs transition-all"
-                href="#samples"
+                href="#pricing"
               >
                 <Icon
-                  name="visibility"
+                  name="attach_money"
                   className="text-[24px] text-slate-500"
                 />
-                <span>Sample Heatmap</span>
+                <span>Pricing</span>
               </a>
             </div>
           </div>

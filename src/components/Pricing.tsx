@@ -62,11 +62,6 @@ export default function Pricing() {
                 {plan.description}
               </p>
               <div className="mb-6 pb-6 border-b border-slate-100">
-                {plan.priceQualifier && (
-                  <span className="font-mono text-[11px] text-slate-500 font-semibold uppercase tracking-wider block mb-0.5">
-                    {plan.priceQualifier}
-                  </span>
-                )}
                 <div className="flex items-baseline gap-1">
                   <span className="font-sans text-4xl font-extrabold text-civil-navy">
                     {plan.price}

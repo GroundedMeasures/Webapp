@@ -25,9 +25,9 @@ export default function UtilityBar() {
           <span className="text-slate-500">|</span>
           <a
             className="text-slate-300 hover:text-white transition-colors"
-            href={CONTACT.emailHref}
+            href="mailto:bids@groundedmeasures.com"
           >
-            {CONTACT.email}
+            bids@groundedmeasures.com
           </a>
         </div>
       </div>

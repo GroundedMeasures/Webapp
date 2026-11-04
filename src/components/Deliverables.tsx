@@ -23,7 +23,7 @@ export default function Deliverables() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 bg-white rounded-xl border border-slate-200 divide-y divide-slate-200 shadow-xs">
+        <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-4 bg-white rounded-xl border border-slate-200 divide-y divide-slate-200 shadow-xs">
           {DELIVERABLES.slice(0, 2).map((item) => (
             <div
               key={item.title}

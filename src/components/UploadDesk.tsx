@@ -225,9 +225,9 @@ export default function UploadDesk() {
                 Just budgeting or don't have plans yet? Email{" "}
                 <a
                   className="text-amber-700 underline"
-                  href={CONTACT.emailHref}
+                  href="mailto:bids@groundedmeasures.com"
                 >
-                  {CONTACT.email}
+                  bids@groundedmeasures.com
                 </a>{" "}
                 or call{" "}
                 <a
