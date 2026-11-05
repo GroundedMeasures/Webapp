@@ -23,6 +23,15 @@ type SubmitStatus = "idle" | "submitting" | "success" | "error";
 export default function UploadDesk() {
   const [status, setStatus] = useState<SubmitStatus>("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const [files, setFiles] = useState<File[]>([]);
+const [isDragging, setIsDragging] = useState(false);
+const totalSize = files.reduce((sum, f) => sum + f.size, 0);
+
+function addFiles(list: FileList | null) {
+  if (!list?.length) return;
+  const incoming = Array.from(list); // snapshot now, not inside the updater
+  setFiles((prev) => [...prev, ...incoming]);
+}
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -238,7 +247,77 @@ export default function UploadDesk() {
                 </a>{" "}
                 to discuss an upcoming project.
               </p>
-              <div className="border-2 border-dashed border-slate-300 hover:border-amber-600 bg-slate-50 hover:bg-white p-6 rounded-xl text-center transition-all cursor-pointer relative group">
+              <div
+  onDragOver={(e) => {
+    e.preventDefault();
+    setIsDragging(true);
+  }}
+  onDragLeave={(e) => {
+    if (!e.currentTarget.contains(e.relatedTarget as Node)) setIsDragging(false);
+  }}
+  onDrop={(e) => {
+    e.preventDefault();
+    setIsDragging(false);
+    addFiles(e.dataTransfer.files);
+  }}
+  className={`border-2 border-dashed p-6 rounded-xl text-center transition-all cursor-pointer relative group ${
+    isDragging
+      ? "border-amber-600 bg-amber-50"
+      : "border-slate-300 bg-slate-50 hover:border-amber-600 hover:bg-white"
+  }`}
+>
+  <input
+    accept=".pdf,.dwg,.dxf,.kmz,.xml,.png,.jpg,.jpeg,.csv,.xlsx,.xls,.tif,.zip"
+    className="absolute inset-0 opacity-0 cursor-pointer w-full h-full"
+    multiple
+    type="file"
+    onChange={(e) => {
+      addFiles(e.target.files);
+      e.target.value = ""; // lets the same file be picked again
+    }}
+  />
+<div className="flex flex-col items-center justify-center pointer-events-none">
+                  <div className="w-10 h-10 rounded-full bg-white border border-slate-200 shadow-xs flex items-center justify-center text-amber-600 mb-2 group-hover:scale-105 transition-transform">
+                    <Icon name="cloud_upload" className="text-[24px]" />
+                  </div>
+                  <p className="font-sans text-xs font-bold text-civil-navy">
+                    Drag &amp; drop plan files here or{" "}
+                    <span className="text-amber-700 underline">
+                      Browse Local Files
+                    </span>
+                  </p>
+                  <p className="font-mono text-[11px] text-slate-500 mt-1">
+                    Supports .PDF, .DWG, .DXF, .KMZ, .LandXML, .PNG/.JPG, .CSV,
+                    .XLSX, .TIF, or .ZIP <br />
+                    (up to 3MB combined){" "}
+                  </p>
+                  <p className="font-mono text-[11px] text-slate-500 mt-1">
+                    *For larger files, please provide a link in the notes below.
+                  </p>
+                </div></div>
+
+{files.length > 0 && (
+  <ul className="mt-2 space-y-1">
+    {files.map((f, i) => (
+      <li key={`${f.name}-${i}`} className="flex justify-between font-mono text-[11px] text-slate-600">
+        <span className="truncate">{f.name} ({(f.size / 1024 / 1024).toFixed(2)} MB)</span>
+        <button
+          type="button"
+          className="text-rose-600 ml-2"
+          onClick={() => setFiles((prev) => prev.filter((_, j) => j !== i))}
+        >
+          Remove
+        </button>
+      </li>
+    ))}
+    {totalSize > MAX_TOTAL_ATTACHMENT_BYTES && (
+      <li className="font-mono text-[11px] text-rose-700">
+        Over 3MB combined. Files won't be attached, so please add a link in the notes.
+      </li>
+    )}
+  </ul>
+)}
+              {/* <div className="border-2 border-dashed border-slate-300 hover:border-amber-600 bg-slate-50 hover:bg-white p-6 rounded-xl text-center transition-all cursor-pointer relative group">
                 <input
                   accept=".pdf,.dwg,.dxf,.kmz,.xml,.png,.jpg,.jpeg,.csv,.xlsx,.xls,.tif,.zip"
                   className="absolute inset-0 opacity-0 cursor-pointer w-full h-full"
@@ -265,7 +344,7 @@ export default function UploadDesk() {
                     *For larger files, please provide a link in the notes below.
                   </p>
                 </div>
-              </div>
+              </div> */}
             </div>
             <div>
               <label className="block font-sans text-xs font-bold text-civil-navy mb-1">

@@ -116,6 +116,7 @@ export const PRICING_TIERS = [
     turnaround: "2-3 Business Day Turnaround",
     features: [
       "Volume Breakdown by Individual Pad & Basin",
+      "50'x50' Cut/Fill Grid Layout",
       "Direct Phone Q&A with Takeoff Estimator",
     ],
     ctaLabel: "Upload Plans for Tier 2 ($850)",
